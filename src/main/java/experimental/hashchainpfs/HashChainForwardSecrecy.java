@@ -7,6 +7,7 @@ import org.bouncycastle.crypto.modes.GCMBlockCipher;
 import org.bouncycastle.crypto.params.AEADParameters;
 import org.bouncycastle.crypto.params.KeyParameter;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
@@ -14,7 +15,8 @@ import java.util.Arrays;
  * High level cryptography helper class using AES-128 in GCM mode and a SHA-256 hash chain to achieve perfect forward
  * secrecy without the need for a connection initialization handshake.
  */
-public class HashChainForwardSecrecy {
+public class HashChainForwardSecrecy implements Serializable {
+    public static final int NUM_HASH_BYTES = 32;
     private final byte[] currentKey;
 
     /**
@@ -22,7 +24,7 @@ public class HashChainForwardSecrecy {
      */
     public HashChainForwardSecrecy() {
         SecureRandom random = new SecureRandom();
-        currentKey = random.generateSeed(32);
+        currentKey = random.generateSeed(NUM_HASH_BYTES);
     }
 
     /**
@@ -32,7 +34,7 @@ public class HashChainForwardSecrecy {
      */
     public HashChainForwardSecrecy(byte[] currentKey) {
         this.currentKey = currentKey;
-        assert this.currentKey.length == 32; // assure we have correct key length
+        assert this.currentKey.length == NUM_HASH_BYTES; // assure we have correct key length
     }
 
     /**

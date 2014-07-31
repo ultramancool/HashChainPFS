@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="HashChainPFS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HashChainPFS_jar</output-path>
+    <root id="root">
+      <element id="archive" name="HashChainPFS.jar">
+        <element id="module-output" name="HashChainPFS" />
+      </element>
+      <element id="library" level="project" name="Gradle: args4j-2.0.29" />
+      <element id="library" level="project" name="Gradle: maven-artifact-manager-2.0.4" />
+      <element id="library" level="project" name="Gradle: junit-3.8.1" />
+      <element id="library" level="project" name="Gradle: maven-profile-2.0.4" />
+      <element id="library" level="project" name="Gradle: guava-17.0" />
+      <element id="library" level="project" name="Gradle: maven-repository-metadata-2.0.4" />
+      <element id="library" level="project" name="Gradle: plexus-container-default-1.0-alpha-9" />
+      <element id="library" level="project" name="Gradle: maven-project-2.0.4" />
+      <element id="library" level="project" name="Gradle: maven-plugin-api-2.0" />
+      <element id="library" level="project" name="Gradle: classworlds-1.1-alpha-2" />
+      <element id="library" level="project" name="Gradle: bcprov-jdk14-1.51" />
+      <element id="library" level="project" name="Gradle: maven-model-2.0.4" />
+      <element id="library" level="project" name="Gradle: plexus-utils-1.1" />
+      <element id="library" level="project" name="Gradle: maven-settings-2.0.4" />
+      <element id="library" level="project" name="Gradle: maven-artifact-2.0.4" />
+      <element id="library" level="project" name="Gradle: args4j-tools-2.0.29-all" />
+      <element id="library" level="project" name="Gradle: args4j-maven-plugin-2.0.29" />
+      <element id="library" level="project" name="Gradle: wagon-provider-api-1.0-alpha-6" />
+    </root>
+  </artifact>
+</component>
