@@ -17,6 +17,9 @@ import java.util.Arrays;
  */
 public class HashChainForwardSecrecy implements Serializable {
     public static final int NUM_HASH_BYTES = 32;
+    public static final int GCM_MAC_SIZE = 128;
+    public static final int NONCE_SIZE_BYTES = 16;
+    public static final int KEY_SIZE_BYTES = 16;
     private final byte[] currentKey;
 
     /**
@@ -57,10 +60,10 @@ public class HashChainForwardSecrecy implements Serializable {
     private GCMBlockCipher createCipher(boolean encrypt) {
         GCMBlockCipher gcm = new GCMBlockCipher(new AESFastEngine());
 
-        byte[] nonce = Arrays.copyOfRange(currentKey, 0, 16);
-        byte[] key = Arrays.copyOfRange(currentKey, 16, 32);
+        byte[] nonce = Arrays.copyOfRange(currentKey, 0, NONCE_SIZE_BYTES);
+        byte[] key = Arrays.copyOfRange(currentKey, NONCE_SIZE_BYTES, NONCE_SIZE_BYTES + KEY_SIZE_BYTES);
 
-        AEADParameters aeadParameters = new AEADParameters(new KeyParameter(key), 128, nonce, null);
+        AEADParameters aeadParameters = new AEADParameters(new KeyParameter(key), GCM_MAC_SIZE, nonce, null);
         gcm.init(encrypt, aeadParameters);
         return gcm;
     }
