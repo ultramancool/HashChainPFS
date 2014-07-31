@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
-Class-Path: args4j-2.0.29.jar maven-artifact-manager-2.0.4.jar junit-3
- .8.1.jar maven-profile-2.0.4.jar guava-17.0.jar maven-repository-meta
- data-2.0.4.jar plexus-container-default-1.0-alpha-9.jar maven-project
- -2.0.4.jar maven-plugin-api-2.0.jar classworlds-1.1-alpha-2.jar bcpro
- v-jdk14-1.51.jar maven-model-2.0.4.jar plexus-utils-1.1.jar maven-set
- tings-2.0.4.jar maven-artifact-2.0.4.jar args4j-tools-2.0.29-all.jar 
- args4j-maven-plugin-2.0.29.jar wagon-provider-api-1.0-alpha-6.jar
+Class-Path: maven-project-2.0.4.jar maven-model-2.0.4.jar classworlds-
+ 1.1-alpha-2.jar bcprov-jdk14-1.51.jar maven-artifact-2.0.4.jar maven-
+ plugin-api-2.0.jar args4j-tools-2.0.29-all.jar junit-3.8.1.jar maven-
+ settings-2.0.4.jar maven-artifact-manager-2.0.4.jar plexus-container-
+ default-1.0-alpha-9.jar guava-17.0.jar commons-codec-1.9.jar maven-re
+ pository-metadata-2.0.4.jar args4j-maven-plugin-2.0.29.jar plexus-uti
+ ls-1.1.jar args4j-2.0.29.jar wagon-provider-api-1.0-alpha-6.jar maven
+ -profile-2.0.4.jar
 Main-Class: experimental.hashchainpfs.Main
 

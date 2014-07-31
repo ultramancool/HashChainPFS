@@ -1,6 +1,8 @@
 package experimental.hashchainpfs;
 
 import com.google.common.io.ByteStreams;
+import org.apache.commons.codec.binary.Base64InputStream;
+import org.apache.commons.codec.binary.Base64OutputStream;
 import org.bouncycastle.crypto.InvalidCipherTextException;
 import org.bouncycastle.util.encoders.Hex;
 import org.kohsuke.args4j.Argument;
@@ -14,13 +16,23 @@ import java.io.*;
  * The HashChainPFS command line tool.
  */
 public class Main {
+
     HashChainForwardSecrecy hashChainForwardSecrecy;
     @Argument(required = true, index = 0, usage = "the mode of operation", metaVar = "mode")
     RunMode mode;
     @Argument(required = true, index = 1, usage = "the file from which to save/load the key", metaVar = "filename")
     String fileName;
-    @Option(name = "-key", usage = "The 256-bit hex key to be used for setup. Will be generated if not present.")
+    @Option(name = "-k", usage = "The 256-bit hex key to be used for setup. Will be generated if not present.")
     String key;
+    @Option(name = "-i", usage = "Set the data format to use for input (default raw)")
+    Format dataInputFormat;
+    @Option(name = "-o", usage = "Set the data format to use for output (default raw)")
+    Format dataOutputFormat;
+
+    public Main() {
+        dataInputFormat = Format.RAW;
+        dataOutputFormat = Format.RAW;
+    }
 
     public static void main(String[] args) {
         Main bean = new Main();
@@ -55,7 +67,21 @@ public class Main {
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
-            ByteStreams.copy(System.in, byteArrayOutputStream);
+            switch (dataInputFormat) {
+                case BASE64:
+                    Base64InputStream base64InputStream = new Base64InputStream(System.in);
+                    ByteStreams.copy(base64InputStream, byteArrayOutputStream);
+                    break;
+                case HEX:
+                    ByteArrayOutputStream stringByteArray = new ByteArrayOutputStream();
+                    ByteStreams.copy(System.in, stringByteArray);
+                    String hex = new String(stringByteArray.toByteArray());
+                    Hex.decode(hex, byteArrayOutputStream);
+                    break;
+                case RAW:
+                    ByteStreams.copy(System.in, byteArrayOutputStream);
+                    break;
+            }
         } catch (IOException e) {
             System.err.println("Error reading from stdin");
             e.printStackTrace();
@@ -70,7 +96,18 @@ public class Main {
                 output = hashChainForwardSecrecy.encryptMessage(byteArrayOutputStream.toByteArray());
             }
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(output);
-            ByteStreams.copy(byteArrayInputStream, System.out);
+            switch (dataOutputFormat) {
+                case BASE64:
+                    Base64OutputStream base64OutputStream = new Base64OutputStream(System.out);
+                    ByteStreams.copy(byteArrayInputStream, base64OutputStream);
+                    break;
+                case HEX:
+                    Hex.encode(output, System.out);
+                    break;
+                case RAW:
+                    ByteStreams.copy(byteArrayInputStream, System.out);
+            }
+            System.out.flush();
         } catch (InvalidCipherTextException e) {
             System.err.println("Invalid ciphertext. Possible attack or error in transmission.");
             e.printStackTrace();
@@ -115,5 +152,11 @@ public class Main {
         DECRYPT,
         ENCRYPT,
         SETUP
+    }
+
+    enum Format {
+        RAW,
+        HEX,
+        BASE64
     }
 }
