@@ -11,6 +11,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile 'org.bouncycastle:bcprov-jdk14:1.51'
     compile 'org.kohsuke.args4j:args4j-maven-plugin:2.0.29'
-    compile 'com.google.guava:guava:17.0'
     compile 'commons-codec:commons-codec:1.9'
+    compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
 }

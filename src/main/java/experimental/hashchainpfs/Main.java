@@ -1,8 +1,8 @@
 package experimental.hashchainpfs;
 
-import com.google.common.io.ByteStreams;
 import org.apache.commons.codec.binary.Base64InputStream;
 import org.apache.commons.codec.binary.Base64OutputStream;
+import org.apache.commons.io.IOUtils;
 import org.bouncycastle.crypto.InvalidCipherTextException;
 import org.bouncycastle.util.encoders.Hex;
 import org.kohsuke.args4j.Argument;
@@ -70,16 +70,16 @@ public class Main {
             switch (dataInputFormat) {
                 case BASE64:
                     Base64InputStream base64InputStream = new Base64InputStream(System.in);
-                    ByteStreams.copy(base64InputStream, byteArrayOutputStream);
+                    IOUtils.copy(base64InputStream, byteArrayOutputStream);
                     break;
                 case HEX:
                     ByteArrayOutputStream stringByteArray = new ByteArrayOutputStream();
-                    ByteStreams.copy(System.in, stringByteArray);
+                    IOUtils.copy(System.in, stringByteArray);
                     String hex = new String(stringByteArray.toByteArray());
                     Hex.decode(hex, byteArrayOutputStream);
                     break;
                 case RAW:
-                    ByteStreams.copy(System.in, byteArrayOutputStream);
+                    IOUtils.copy(System.in, byteArrayOutputStream);
                     break;
             }
         } catch (IOException e) {
@@ -99,13 +99,13 @@ public class Main {
             switch (dataOutputFormat) {
                 case BASE64:
                     Base64OutputStream base64OutputStream = new Base64OutputStream(System.out);
-                    ByteStreams.copy(byteArrayInputStream, base64OutputStream);
+                    IOUtils.copy(byteArrayInputStream, base64OutputStream);
                     break;
                 case HEX:
                     Hex.encode(output, System.out);
                     break;
                 case RAW:
-                    ByteStreams.copy(byteArrayInputStream, System.out);
+                    IOUtils.copy(byteArrayInputStream, System.out);
             }
             System.out.flush();
         } catch (InvalidCipherTextException e) {

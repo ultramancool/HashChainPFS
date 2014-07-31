@@ -1,29 +1,28 @@
 <component name="ArtifactManager">
-  <artifact build-on-make="true" name="HashChainPFS:jar">
+  <artifact type="jar" build-on-make="true" name="HashChainPFS:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/HashChainPFS_jar</output-path>
-    <root id="root">
-      <element id="archive" name="HashChainPFS.jar">
-        <element id="module-output" name="HashChainPFS" />
-      </element>
-      <element id="library" level="project" name="Gradle: maven-project-2.0.4" />
-      <element id="library" level="project" name="Gradle: maven-model-2.0.4" />
-      <element id="library" level="project" name="Gradle: classworlds-1.1-alpha-2" />
-      <element id="library" level="project" name="Gradle: bcprov-jdk14-1.51" />
-      <element id="library" level="project" name="Gradle: maven-artifact-2.0.4" />
-      <element id="library" level="project" name="Gradle: maven-plugin-api-2.0" />
-      <element id="library" level="project" name="Gradle: args4j-tools-2.0.29-all" />
-      <element id="library" level="project" name="Gradle: junit-3.8.1" />
-      <element id="library" level="project" name="Gradle: maven-settings-2.0.4" />
-      <element id="library" level="project" name="Gradle: maven-artifact-manager-2.0.4" />
-      <element id="library" level="project" name="Gradle: plexus-container-default-1.0-alpha-9" />
-      <element id="library" level="project" name="Gradle: guava-17.0" />
-      <element id="library" level="project" name="Gradle: commons-codec-1.9" />
-      <element id="library" level="project" name="Gradle: maven-repository-metadata-2.0.4" />
-      <element id="library" level="project" name="Gradle: args4j-maven-plugin-2.0.29" />
-      <element id="library" level="project" name="Gradle: plexus-utils-1.1" />
-      <element id="library" level="project" name="Gradle: args4j-2.0.29" />
-      <element id="library" level="project" name="Gradle: wagon-provider-api-1.0-alpha-6" />
-      <element id="library" level="project" name="Gradle: maven-profile-2.0.4" />
+    <root id="archive" name="HashChainPFS.jar">
+      <element id="module-output" name="HashChainPFS" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/args4j/args4j/2.0.29/55ca4ddc4e906ffbaec043113b36bb410a3d909e/args4j-2.0.29.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact-manager/2.0.4/fd4518f6df9d67772571d61093d3f62ca97b597d/maven-artifact-manager-2.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/3.8.1/99129f16442844f6a4a11ae22fbbee40b14d774f/junit-3.8.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-profile/2.0.4/a19c37fcf520a220801cc31d70520ad874f3ba44/maven-profile-2.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-repository-metadata/2.0.4/416c2d04e7d5ea625126528528e95188d0849d8a/maven-repository-metadata-2.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-container-default/1.0-alpha-9/50596183cd7b688d9d7b6d868a0193ca1a8a7b3d/plexus-container-default-1.0-alpha-9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.directory.studio/org.apache.commons.io/2.4/b98d592c582262b3da8a871c7317f4902d98e996/org.apache.commons.io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-project/2.0.4/14fc171d32ad58451686730d8be3a7a70c6e2b83/maven-project-2.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-plugin-api/2.0/163ff2bc46c56d26e37e82a2cd79408c394a01e2/maven-plugin-api-2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/classworlds/classworlds/1.1-alpha-2/5adf2e681c57d7f48038b602f3ca2254ee82d47/classworlds-1.1-alpha-2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk14/1.51/5392456e75973490d08783c0a8ee8ee44741e39/bcprov-jdk14-1.51.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-model/2.0.4/f5f01bfd082ca5bb027c07a731c43c1fb791756c/maven-model-2.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/1.1/fa632b7f1cb7c50963d0fb7d818ca93c75c10127/plexus-utils-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-settings/2.0.4/350326d6115447dd3f3d63829eb74a391e8719a2/maven-settings-2.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/2.0.4/9a5beba90747559ae5327b4edadfa89e6a5bde24/maven-artifact-2.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/args4j/args4j-tools/2.0.29/b13424ba8d338efbd60e9d17e80aeb89dfc98712/args4j-tools-2.0.29-all.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.kohsuke.args4j/args4j-maven-plugin/2.0.29/abde9bf7d7a9a67948b9c5704b0186c67f0e75b0/args4j-maven-plugin-2.0.29.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.wagon/wagon-provider-api/1.0-alpha-6/b3c986c63fc873fbaef75ad4e57cd162fd5c9dd6/wagon-provider-api-1.0-alpha-6.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
