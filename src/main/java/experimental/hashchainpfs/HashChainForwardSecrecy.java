@@ -36,8 +36,8 @@ public class HashChainForwardSecrecy implements Serializable {
      * @param currentKey the given key
      */
     public HashChainForwardSecrecy(byte[] currentKey) {
+        assert currentKey.length == NUM_HASH_BYTES; // assure we have correct key length
         this.currentKey = currentKey;
-        assert this.currentKey.length == NUM_HASH_BYTES; // assure we have correct key length
     }
 
     /**
